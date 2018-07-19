@@ -29,7 +29,7 @@ public class ShapeCollectorTestSuite {
         Shape aSquare = new Square("square1",3.0);
         ShapeCollector shapeCollector = new ShapeCollector(aSquare);
         shapeCollector.addFigure(aSquare);
-        Assert.assertTrue(shapeCollector.showFigures().isEmpty());
+        Assert.assertFalse(shapeCollector.showFigures().isEmpty());
     }
     @Test
     public void testRemoveFigure() {

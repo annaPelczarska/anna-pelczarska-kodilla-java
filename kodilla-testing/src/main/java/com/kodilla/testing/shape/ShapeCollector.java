@@ -18,7 +18,7 @@ public class ShapeCollector {
         return true;
     }
     public Shape getFigure(int n){
-        return shape;
+        return null;
 
     }
     public List<Shape> showFigures(){
