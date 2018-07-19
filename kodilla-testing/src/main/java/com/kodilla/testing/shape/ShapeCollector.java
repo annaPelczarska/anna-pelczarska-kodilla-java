@@ -12,13 +12,22 @@ public class ShapeCollector {
     }
 
     public void addFigure(Shape shape){
-        //do nothing
+        figures.add(shape);
     }
     public boolean removeFigure(Shape shape){
-        return true;
+        boolean result = true;
+        if(figures.contains(shape)){
+            figures.remove(shape);
+            result = false;
+        }
+        return result;
     }
     public Shape getFigure(int n){
-        return null;
+        Shape shape = null;
+        if(n >= 0 && n< figures.size()){
+            shape = figures.get(n);
+        }
+        return shape;
 
     }
     public List<Shape> showFigures(){

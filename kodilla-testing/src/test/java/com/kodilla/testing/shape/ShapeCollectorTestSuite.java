@@ -44,7 +44,7 @@ public class ShapeCollectorTestSuite {
         Shape aSquare = new Square("square1",3.0);
         ShapeCollector shapeCollector = new ShapeCollector(aSquare);
         boolean result = shapeCollector.removeFigure(aSquare);
-        Assert.assertFalse(result);
+        Assert.assertTrue(result);
     }
     @Test
     public void testGetFigure() {
