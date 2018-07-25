@@ -6,8 +6,8 @@ public class Triangle implements Shape {
         double height;
         double base;
 
-        public Triangle(String shapeName, double height, double base) {
-            shapeName = this.shapeName;
+        public Triangle(double height, double base) {
+            shapeName = "triangle";
             height = this.height;
             base = this.base;
         }

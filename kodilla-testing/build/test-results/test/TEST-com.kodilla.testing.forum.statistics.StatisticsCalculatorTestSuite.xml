@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" tests="7" skipped="0" failures="0" errors="0" timestamp="2018-07-25T17:43:01" hostname="DESKTOP-OBVS8UK" time="0.533">
+  <properties/>
+  <testcase name="testCalculateAdvStatisticsCommentSum0" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.512"/>
+  <testcase name="testCalculateAdvStatisticsCommentSum1LessThanPostSum" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.002"/>
+  <testcase name="testCalculateAdvStatisticsPostSum0" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.002"/>
+  <testcase name="testCalculateAdvStatisticsPostSum1" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.001"/>
+  <testcase name="testCalculateAdvStatisticsUserCount0" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.005"/>
+  <testcase name="testCalculateAdvStatisticsUserCount1" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.002"/>
+  <testcase name="testCalculateAdvStatisticsCommentSumGraterThanPostSum" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.005"/>
+  <system-out><![CDATA[This is the beginning of tests.
+Preparing to execute test #1
+Preparing to execute test #2
+Preparing to execute test #3
+Preparing to execute test #4
+Preparing to execute test #5
+Preparing to execute test #6
+Preparing to execute test #7
+All tests are finished.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -23,14 +23,14 @@ public class ShapeCollectorTestSuite {
     }
     @Test
     public void testAddFigure() {
-        Shape aSquare = new Square("square1",3.0);
+        Shape aSquare = new Square(3.0);
         ShapeCollector shapeCollector = new ShapeCollector();
         shapeCollector.addFigure(aSquare);
         Assert.assertFalse(shapeCollector.showFigures().isEmpty());
     }
     @Test
     public void testRemoveFigure() {
-        Shape aSquare = new Square("square1",3.0);
+        Shape aSquare = new Square(3.0);
         ShapeCollector shapeCollector = new ShapeCollector();
         shapeCollector.addFigure(aSquare);
         boolean result = shapeCollector.removeFigure(aSquare);
@@ -38,14 +38,14 @@ public class ShapeCollectorTestSuite {
     }
     @Test
     public void testRemoveFigureNotExisting() {
-        Shape aSquare = new Square("square1",3.0);
+        Shape aSquare = new Square(3.0);
         ShapeCollector shapeCollector = new ShapeCollector();
         boolean result = shapeCollector.removeFigure(aSquare);
         Assert.assertTrue(result);
     }
     @Test
     public void testGetFigure() {
-        Shape aSquare = new Square("square1",3.0);
+        Shape aSquare = new Square(3.0);
         ShapeCollector shapeCollector = new ShapeCollector();
         shapeCollector.addFigure(aSquare);
         Shape retrievedShape = shapeCollector.getFigure(0);
@@ -53,7 +53,7 @@ public class ShapeCollectorTestSuite {
     }
     @Test
     public void testShowFigures(){
-        Shape aSquare = new Square("square1",3.0);
+        Shape aSquare = new Square(3.0);
         ShapeCollector shapeCollector = new ShapeCollector();
         shapeCollector.addFigure(aSquare);
         Assert.assertEquals(Arrays.asList(aSquare),shapeCollector.showFigures());

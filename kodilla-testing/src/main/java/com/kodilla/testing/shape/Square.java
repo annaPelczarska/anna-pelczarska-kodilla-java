@@ -5,8 +5,8 @@ class Square implements Shape{
     String shapeName;
     double height;
 
-    public Square(String shapeName, double height) {
-        shapeName = this.shapeName;
+    public Square(double height) {
+        shapeName = "square";
         height = this.height;
     }
 
