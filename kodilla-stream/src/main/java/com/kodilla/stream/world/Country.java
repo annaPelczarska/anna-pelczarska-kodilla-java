@@ -1,4 +1,4 @@
-package com.kodilla.stream.com.kodilla.stream.world;
+package com.kodilla.stream.world;
 
 import java.math.BigDecimal;
 

@@ -13,9 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static jdk.nashorn.internal.objects.NativeString.toLocaleUpperCase;
-import static jdk.nashorn.internal.objects.NativeString.toLowerCase;
-import static jdk.nashorn.internal.objects.NativeString.toUpperCase;
+
 
 public class StreamMain {
     public static void main(String[] args) {
@@ -29,7 +27,7 @@ public class StreamMain {
                 .filter(forumUser -> forumUser.getPostQuantity()>0)
                 .collect(Collectors.toMap(ForumUser::getUserID, forumUser -> forumUser));
 
-        System.out.println("# elements: " + theResultMapOfUsers.size());
+        System.out.println("Forum User # elements: " + theResultMapOfUsers.size());
         theResultMapOfUsers.entrySet().stream()
                 .map(entry -> entry.getKey() + ": " + entry.getValue())
                 .forEach(System.out::println);
@@ -70,12 +68,11 @@ public class StreamMain {
         System.out.println("Using Stream to generate even numbers from 1 to 20");
         NumbersGenerator.generateEven(20);*/
 
-   /*     PoemBeautifier poemBeautifier = new PoemBeautifier();
+        PoemBeautifier poemBeautifier = new PoemBeautifier();
         System.out.println("Beautifying texts with lambdas");
         System.out.println(poemBeautifier.beautify("The Road Not Taken",(poem) -> "ABC "+"The Road Not Taken"+" ABC"));
-        System.out.println(poemBeautifier.beautify ("The Road Not Taken", (poem) -> toUpperCase("The Road Not Taken")));
-        System.out.println(poemBeautifier.beautify ("The Road Not Taken", (poem) -> toLowerCase("The Road Not Taken")));
         System.out.println(poemBeautifier.beautify ("The Road Not Taken", (poem) -> "The Road Not Taken".replace("o","*")));
-*/
+        System.out.println(poemBeautifier.beautify ("The Road Not Taken", (poem) -> "The Road Not Taken".replace(" ","_")));
+        System.out.println(poemBeautifier.beautify ("The Road Not Taken", (poem) -> "The Road Not Taken".substring(4)+"."));
     }
 }

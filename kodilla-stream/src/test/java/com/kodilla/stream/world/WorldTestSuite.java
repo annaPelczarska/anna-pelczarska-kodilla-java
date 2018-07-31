@@ -1,8 +1,5 @@
 package com.kodilla.stream.world;
 
-import com.kodilla.stream.com.kodilla.stream.world.Continent;
-import com.kodilla.stream.com.kodilla.stream.world.Country;
-import com.kodilla.stream.com.kodilla.stream.world.World;
 import org.junit.Assert;
 import org.junit.Test;
 
