@@ -8,7 +8,7 @@ public class ArrayOperationsTestSuite {
     @Test
     public void testGetAverage(){
         //Given
-        ArrayOperations.getAverage(numbers);
+        //ArrayOperations.getAverage();
         //When
         int numbers[]= {5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5};
         //Then
