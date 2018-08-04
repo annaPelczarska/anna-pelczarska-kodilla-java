@@ -144,24 +144,17 @@ public class BoardTestSuite {
         List<TaskList> taskListInProgress2 = new ArrayList<>();
         taskListInProgress2.add(new TaskList("In progress"));
 
-        long numberOfInProgressTasks = project.getTaskLists().stream()
-                .filter(taskListInProgress2::contains)
-                .flatMap(tl -> tl.getTasks().stream())
-                .count();
 
-        double totalDuration = project.getTaskLists().stream()
+        double averageTimeInProgress = project.getTaskLists().stream()
                 .filter(taskListInProgress2::contains)
                 .flatMap(tl -> tl.getTasks().stream())
                 .map(t -> (t.getCreated()))
                 .mapToLong(cd->(DAYS.between(LocalDate.now(),cd)))
                 .average().getAsDouble();
 
-                //.sum();
-                //.reduce(0, (sum,current) -> sum = sum.add(current));
+               // .reduce(0averageTimeInProgressL, (sum,current) -> sum = sum+current);
 
         //Then
-        Assert.assertEquals(3, numberOfInProgressTasks);
-        Assert.assertEquals("text",10, abs(totalDuration),0.0001);
-        //Assert.assertEquals(10, averageTimeInProgress);
+        Assert.assertEquals("text",10, abs(averageTimeInProgress),0.0001);
     }
 }
