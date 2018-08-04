@@ -1,0 +1,7 @@
+Country{countryName='France'}
+Country{countryName='Spain'}
+Country{countryName='Russia'}
+Country{countryName='China'}
+!Country{countryName='Mongolia'}
+"Country{countryName='Australia'}
+!Country{countryName='Tasmania'}

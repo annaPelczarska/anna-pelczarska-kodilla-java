@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.testing.forum.tdd.ForumTestSuite" tests="8" skipped="0" failures="0" errors="0" timestamp="2018-07-25T17:43:01" hostname="DESKTOP-OBVS8UK" time="0.055">
+<testsuite name="com.kodilla.testing.forum.tdd.ForumTestSuite" tests="8" skipped="0" failures="0" errors="0" timestamp="2018-08-04T11:24:14" hostname="DESKTOP-OBVS8UK" time="0.018">
   <properties/>
-  <testcase name="testRemovePostNotExisting" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.005"/>
-  <testcase name="testAddPost" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.002"/>
+  <testcase name="testRemovePostNotExisting" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.003"/>
+  <testcase name="testAddPost" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.001"/>
   <testcase name="testGetPost" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.002"/>
-  <testcase name="testRemoveCommentNotExisting" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.007"/>
+  <testcase name="testRemoveCommentNotExisting" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.002"/>
   <testcase name="testRemoveComment" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.002"/>
-  <testcase name="testRemovePost" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.017"/>
-  <testcase name="testGetComment" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.008"/>
-  <testcase name="testAddComment" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.001"/>
+  <testcase name="testRemovePost" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.002"/>
+  <testcase name="testGetComment" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.002"/>
+  <testcase name="testAddComment" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.0"/>
   <system-out><![CDATA[This is the beginning of tests.
 Preparing to execute test #1
 Preparing to execute test #2

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.stream.world.WorldTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-08-04T11:24:09" hostname="DESKTOP-OBVS8UK" time="0.012">
+  <properties/>
+  <testcase name="testGetPeopleQuantity" classname="com.kodilla.stream.world.WorldTestSuite" time="0.012"/>
+  <system-out><![CDATA[Country{countryName='France'}
+Country{countryName='Spain'}
+Country{countryName='Russia'}
+Country{countryName='China'}
+Country{countryName='Mongolia'}
+Country{countryName='Australia'}
+Country{countryName='Tasmania'}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

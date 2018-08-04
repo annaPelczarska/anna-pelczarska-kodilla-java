@@ -2,7 +2,6 @@ package com.kodilla.stream.forumuser;
 
 import java.time.LocalDate;
 
-import static jdk.internal.org.objectweb.asm.commons.GeneratorAdapter.OR;
 
 public final class ForumUser {
     private final int userID;
