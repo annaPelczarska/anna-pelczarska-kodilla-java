@@ -8,11 +8,11 @@ public class ArrayOperationsTestSuite {
     @Test
     public void testGetAverage(){
         //Given
-        //ArrayOperations.getAverage();
+       // ArrayOperations.getAverage();
         //When
         int numbers[]= {5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5};
         //Then
-       // Assert.assertEquals(5,ArrayOperations.getAverage(numbers),0.0001);
+       Assert.assertEquals(5,ArrayOperations.getAverage(numbers),0.0001);
 
     }
 }

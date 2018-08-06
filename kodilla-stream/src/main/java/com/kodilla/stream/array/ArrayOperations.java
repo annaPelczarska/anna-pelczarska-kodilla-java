@@ -10,6 +10,7 @@ public interface ArrayOperations {
                 .forEach(n -> System.out.println(numbers[n]));
 
         double average = IntStream.range(0, numbers.length)
+                .mapToLong((index)->numbers[index])
                 .average().orElse(0);
 
         return average;
