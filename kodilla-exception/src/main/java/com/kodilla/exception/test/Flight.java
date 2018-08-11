@@ -1,7 +1,5 @@
 package com.kodilla.exception.test;
 
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Objects;
 
 public class Flight {
@@ -12,13 +10,14 @@ public class Flight {
         this.departureAirport = departureAirport;
         this.arrivalAirport = arrivalAirport;
     }
+
     public String getDepartureAirport() {
         return departureAirport;
     }
+
     public String getArrivalAirport() {
         return arrivalAirport;
     }
-
 
 
     @Override
