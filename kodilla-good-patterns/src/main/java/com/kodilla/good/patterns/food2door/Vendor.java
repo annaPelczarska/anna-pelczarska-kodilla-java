@@ -17,4 +17,12 @@ public class Vendor {
     public String getAddress() {
         return address;
     }
+
+    @Override
+    public String toString() {
+        return "Vendor{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }
