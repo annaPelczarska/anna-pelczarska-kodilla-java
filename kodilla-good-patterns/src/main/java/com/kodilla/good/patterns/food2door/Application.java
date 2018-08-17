@@ -3,6 +3,10 @@ package com.kodilla.good.patterns.food2door;
 public class Application {
 
     OrderProcessor orderProcessor;
+    OrderProcessor orderProcessorExtraFoodShop;
+    OrderProcessor orderProcessorGlutenFreeShop;
+    OrderProcessor orderProcessorHealthyShop;
+    OrderProcessor orderProcessorOperator;
 
     public Application(OrderProcessor orderProcessor) {
         this.orderProcessor = orderProcessor;
@@ -13,15 +17,21 @@ public class Application {
         OrderRetriever orderRetriever = new OrderRetriever();
         Order order = orderRetriever.retrieve();
 
-        OrderProcessor orderProcessor = new OrderProcessorHealthyShop();
+        OrderProcessorExtraFoodShop orderProcessorExtraFoodShop = new OrderProcessorExtraFoodShop(order.getVendor());
+
+        OrderProcessor orderProcessor = orderProcessorExtraFoodShop;
+                //new OrderProcessorOperator(order.getVendor());
+                //orderProcessorOperator.getOrderProcessorMap().get(order.getVendor());
+                //.getOrderProcessorMap().get(order.getVendor());
                 //new OrderProcessorOperator(order);
+
 
         System.out.println(order.getVendor().getName());
 
         try {
             orderProcessor.process(order);
             orderProcessor.confirm(orderProcessor.process(order));
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Oh no! Error: " + e);
         }
     }

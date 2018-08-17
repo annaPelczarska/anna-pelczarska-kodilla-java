@@ -2,11 +2,20 @@ package com.kodilla.good.patterns.food2door;
 
 public class OrderProcessorGlutenFreeShop implements OrderProcessor {
 
+    Vendor vendor;
+
+    public OrderProcessorGlutenFreeShop(Vendor vendor) {
+        this.vendor = vendor;
+    }
+
+    public Vendor getVendor() {
+        return vendor;
+    }
+
     public OrderDto process(Order order) {
-        if(!order.equals(null)){
+        if (!order.equals(null)) {
             return new OrderDto(order.getVendor(), order.getProduct(), true);
-        }
-        else {
+        } else {
             System.out.println("Your cart is empty");
             return new OrderDto(order.getVendor(), order.getProduct(), false);
         }

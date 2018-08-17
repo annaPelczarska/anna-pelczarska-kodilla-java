@@ -1,33 +1,67 @@
 package com.kodilla.good.patterns.food2door;
 
+import java.util.*;
+
 public class OrderProcessorOperator implements OrderProcessor {
 
     OrderProcessorExtraFoodShop orderProcessorExtraFoodShop;
     OrderProcessorGlutenFreeShop orderProcessorGlutenFreeShop;
     OrderProcessorHealthyShop orderProcessorHealthyShop;
-    OrderProcessor orderProcessor;
 
-    public OrderProcessorOperator (Order order) {
-
-        if(order.getVendor().getName().equals("Extra Food Shop")){
-        orderProcessor = orderProcessorExtraFoodShop;}
-        else if(order.getVendor().getName().equals("Gluten Free Shop")){
-        orderProcessor = orderProcessorGlutenFreeShop;}
-        else if(order.getVendor().getName().equals("Healthy Shop")){
-        orderProcessor = orderProcessorHealthyShop;}
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OrderProcessorOperator that = (OrderProcessorOperator) o;
+        return Objects.equals(orderProcessorExtraFoodShop, that.orderProcessorExtraFoodShop) &&
+                Objects.equals(orderProcessorGlutenFreeShop, that.orderProcessorGlutenFreeShop) &&
+                Objects.equals(orderProcessorHealthyShop, that.orderProcessorHealthyShop);
     }
 
-    public OrderDto process(Order order){
+    @Override
+    public int hashCode() {
+        return Objects.hash(orderProcessorExtraFoodShop, orderProcessorGlutenFreeShop, orderProcessorHealthyShop);
+    }
 
-        if(!order.equals(null)){
-            return new OrderDto(order.getVendor(), order.getProduct(), true);
+    Vendor vendor;
+
+    List<OrderProcessor> orderProcessorList = new LinkedList<>();
+
+    Map<Vendor, OrderProcessor> orderProcessorMap = new HashMap<>();
+
+    public OrderProcessorOperator(Vendor vendor) {
+
+       /* orderProcessorList.add(orderProcessorExtraFoodShop);
+        orderProcessorList.add(orderProcessorGlutenFreeShop);
+        orderProcessorList.add(orderProcessorHealthyShop);*/
+
+        this.orderProcessorMap = orderProcessorMap;
+        this.vendor = vendor;
+
+        if (vendor.getName().equals("Extra Food Shop")) {
+            orderProcessorMap.put(orderProcessorExtraFoodShop.getVendor(), orderProcessorExtraFoodShop);
+        } else if (vendor.getName().equals("Gluten Free Shop")) {
+            orderProcessorMap.put(orderProcessorGlutenFreeShop.getVendor(), orderProcessorGlutenFreeShop);
+        } else if (vendor.getName().equals("Healthy Shop")) {
+            orderProcessorMap.put(orderProcessorHealthyShop.getVendor(), orderProcessorHealthyShop);
         }
-        else {
+    }
+
+    public Map<Vendor, OrderProcessor> getOrderProcessorMap() {
+        return orderProcessorMap;
+    }
+
+    public OrderDto process(Order order) {
+
+        if (!order.equals(null)) {
+            return new OrderDto(order.getVendor(), order.getProduct(), true);
+        } else {
             System.out.println("Your cart is empty");
             return new OrderDto(order.getVendor(), order.getProduct(), false);
         }
     }
-   public void confirm(OrderDto orderDto){
+
+    public void confirm(OrderDto orderDto) {
 
     }
 }

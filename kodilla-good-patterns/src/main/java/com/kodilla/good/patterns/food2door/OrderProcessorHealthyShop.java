@@ -2,6 +2,16 @@ package com.kodilla.good.patterns.food2door;
 
 public class OrderProcessorHealthyShop implements OrderProcessor {
 
+    Vendor vendor;
+
+    public OrderProcessorHealthyShop(Vendor vendor) {
+        this.vendor = vendor;
+    }
+
+    public Vendor getVendor() {
+        return vendor;
+    }
+
     public OrderDto process(Order order) {
         boolean isOrdered = !order.equals(null);
 
