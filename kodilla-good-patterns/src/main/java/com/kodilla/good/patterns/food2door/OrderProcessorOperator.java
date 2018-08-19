@@ -8,20 +8,6 @@ public class OrderProcessorOperator implements OrderProcessor {
     OrderProcessorGlutenFreeShop orderProcessorGlutenFreeShop;
     OrderProcessorHealthyShop orderProcessorHealthyShop;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        OrderProcessorOperator that = (OrderProcessorOperator) o;
-        return Objects.equals(orderProcessorExtraFoodShop, that.orderProcessorExtraFoodShop) &&
-                Objects.equals(orderProcessorGlutenFreeShop, that.orderProcessorGlutenFreeShop) &&
-                Objects.equals(orderProcessorHealthyShop, that.orderProcessorHealthyShop);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(orderProcessorExtraFoodShop, orderProcessorGlutenFreeShop, orderProcessorHealthyShop);
-    }
 
     Vendor vendor;
 
@@ -36,7 +22,7 @@ public class OrderProcessorOperator implements OrderProcessor {
         orderProcessorList.add(orderProcessorHealthyShop);*/
 
         this.orderProcessorMap = orderProcessorMap;
-        this.vendor = vendor;
+       // this.vendor = vendor;
 
         if (vendor.getName().equals("Extra Food Shop")) {
             orderProcessorMap.put(orderProcessorExtraFoodShop.getVendor(), orderProcessorExtraFoodShop);
