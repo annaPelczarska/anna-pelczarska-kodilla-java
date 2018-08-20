@@ -1,30 +1,28 @@
 package com.kodilla.good.patterns.food2door;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Application {
 
-    OrderProcessor orderProcessor;
-    OrderProcessor orderProcessorExtraFoodShop;
-    OrderProcessor orderProcessorGlutenFreeShop;
-    OrderProcessor orderProcessorHealthyShop;
-    OrderProcessor orderProcessorOperator;
-
-    public Application(OrderProcessor orderProcessor) {
-        this.orderProcessor = orderProcessor;
-    }
 
     public static void main(String[] args) {
+
 
         OrderRetriever orderRetriever = new OrderRetriever();
         Order order = orderRetriever.retrieve();
 
-        OrderProcessorExtraFoodShop orderProcessorExtraFoodShop = new OrderProcessorExtraFoodShop(order.getVendor());
+        List<OrderProcessor> orderProcessorList = new LinkedList<>();
 
-        OrderProcessor orderProcessor = orderProcessorExtraFoodShop;
-                //new OrderProcessorOperator(order.getVendor());
-                //orderProcessorOperator.getOrderProcessorMap().get(order.getVendor());
-                //.getOrderProcessorMap().get(order.getVendor());
-                //new OrderProcessorOperator(order);
+        OrderProcessor orderProcessorExtraFoodShop = new OrderProcessorExtraFoodShop(order.getVendor());
+        OrderProcessor orderProcessorGlutenFreeShop = new OrderProcessorGlutenFreeShop(order.getVendor());
+        OrderProcessor orderProcessorHealthyShop = new OrderProcessorHealthyShop(order.getVendor());
 
+        orderProcessorList.add(orderProcessorExtraFoodShop);
+        orderProcessorList.add(orderProcessorGlutenFreeShop);
+        orderProcessorList.add(orderProcessorHealthyShop);
+
+        OrderProcessor orderProcessor = new OrderProcessorOperator(orderProcessorList);
 
         System.out.println(order.getVendor().getName());
 

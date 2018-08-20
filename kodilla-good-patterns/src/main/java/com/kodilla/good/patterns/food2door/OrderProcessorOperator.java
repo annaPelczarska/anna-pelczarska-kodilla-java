@@ -4,40 +4,30 @@ import java.util.*;
 
 public class OrderProcessorOperator implements OrderProcessor {
 
-    OrderProcessorExtraFoodShop orderProcessorExtraFoodShop;
-    OrderProcessorGlutenFreeShop orderProcessorGlutenFreeShop;
-    OrderProcessorHealthyShop orderProcessorHealthyShop;
-
-
-    Vendor vendor;
-
-    List<OrderProcessor> orderProcessorList = new LinkedList<>();
 
     Map<Vendor, OrderProcessor> orderProcessorMap = new HashMap<>();
+    List<OrderProcessor> orderProcessorList = new LinkedList<>();
+    Order order;
 
-    public OrderProcessorOperator(Vendor vendor) {
 
-       /* orderProcessorList.add(orderProcessorExtraFoodShop);
-        orderProcessorList.add(orderProcessorGlutenFreeShop);
-        orderProcessorList.add(orderProcessorHealthyShop);*/
+    public Vendor getVendor() {
+        return order.getVendor();
+    }
 
-        this.orderProcessorMap = orderProcessorMap;
-       // this.vendor = vendor;
+    public OrderProcessorOperator(List<OrderProcessor> orderProcessorList) {
 
-        if (vendor.getName().equals("Extra Food Shop")) {
-            orderProcessorMap.put(orderProcessorExtraFoodShop.getVendor(), orderProcessorExtraFoodShop);
-        } else if (vendor.getName().equals("Gluten Free Shop")) {
-            orderProcessorMap.put(orderProcessorGlutenFreeShop.getVendor(), orderProcessorGlutenFreeShop);
-        } else if (vendor.getName().equals("Healthy Shop")) {
-            orderProcessorMap.put(orderProcessorHealthyShop.getVendor(), orderProcessorHealthyShop);
+        for (OrderProcessor p : orderProcessorList) {
+            orderProcessorMap.put(p.getVendor(), p);
         }
     }
 
-    public Map<Vendor, OrderProcessor> getOrderProcessorMap() {
-        return orderProcessorMap;
-    }
+    @Override
+    public OrderDto process(Order order) throws EmptyOrderException {
 
-    public OrderDto process(Order order) {
+        for (
+                Map.Entry<Vendor, OrderProcessor> entry : orderProcessorMap.entrySet()) {
+            entry.getValue().process(order);
+        }
 
         if (!order.equals(null)) {
             return new OrderDto(order.getVendor(), order.getProduct(), true);
@@ -45,9 +35,12 @@ public class OrderProcessorOperator implements OrderProcessor {
             System.out.println("Your cart is empty");
             return new OrderDto(order.getVendor(), order.getProduct(), false);
         }
+
     }
 
     public void confirm(OrderDto orderDto) {
 
     }
 }
+
+
