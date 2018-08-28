@@ -24,10 +24,8 @@ public class OrderProcessorOperator implements OrderProcessor {
     @Override
     public OrderDto process(Order order) throws EmptyOrderException {
 
-        for (
-                Map.Entry<Vendor, OrderProcessor> entry : orderProcessorMap.entrySet()) {
-            entry.getValue().process(order);
-        }
+        orderProcessorMap.get(order.getVendor()).process(order);
+
 
         if (!order.equals(null)) {
             return new OrderDto(order.getVendor(), order.getProduct(), true);
@@ -39,7 +37,7 @@ public class OrderProcessorOperator implements OrderProcessor {
     }
 
     public void confirm(OrderDto orderDto) {
-
+        orderProcessorMap.get(order.getVendor()).confirm(orderDto);
     }
 }
 

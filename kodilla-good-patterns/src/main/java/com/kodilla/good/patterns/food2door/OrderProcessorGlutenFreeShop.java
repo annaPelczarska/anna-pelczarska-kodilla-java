@@ -14,6 +14,7 @@ public class OrderProcessorGlutenFreeShop implements OrderProcessor {
 
     public OrderDto process(Order order) {
         if (!order.equals(null)) {
+            System.out.println("Not Pretty");
             return new OrderDto(order.getVendor(), order.getProduct(), true);
         } else {
             System.out.println("Your cart is empty");

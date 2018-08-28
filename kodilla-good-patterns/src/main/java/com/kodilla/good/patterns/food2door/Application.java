@@ -29,6 +29,7 @@ public class Application {
         try {
             orderProcessor.process(order);
             orderProcessor.confirm(orderProcessor.process(order));
+            //orderProcessor.confirm(orderProcessor.process(order));
         } catch (Exception e) {
             System.out.println("Oh no! Error: " + e);
         }

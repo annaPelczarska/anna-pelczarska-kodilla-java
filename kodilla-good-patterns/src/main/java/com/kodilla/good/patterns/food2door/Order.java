@@ -38,4 +38,15 @@ public class Order {
     public LocalDateTime getDate() {
         return date;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "user=" + user +
+                ", vendor=" + vendor +
+                ", product=" + product +
+                ", quantity=" + quantity +
+                ", date=" + date +
+                '}';
+    }
 }
