@@ -7,7 +7,8 @@ public class OrderProcessorOperator implements OrderProcessor {
 
     Map<Vendor, OrderProcessor> orderProcessorMap = new HashMap<>();
     List<OrderProcessor> orderProcessorList = new LinkedList<>();
-    Order order;
+    OrderRetriever retriever = new OrderRetriever();
+    Order order = retriever.retrieve();
 
 
     public Vendor getVendor() {
@@ -24,8 +25,7 @@ public class OrderProcessorOperator implements OrderProcessor {
     @Override
     public OrderDto process(Order order) throws EmptyOrderException {
 
-        orderProcessorMap.get(order.getVendor()).process(order);
-
+       orderProcessorMap.get(order.getVendor()).process(order);
 
         if (!order.equals(null)) {
             return new OrderDto(order.getVendor(), order.getProduct(), true);
@@ -39,6 +39,7 @@ public class OrderProcessorOperator implements OrderProcessor {
     public void confirm(OrderDto orderDto) {
         orderProcessorMap.get(order.getVendor()).confirm(orderDto);
     }
+
 }
 
 

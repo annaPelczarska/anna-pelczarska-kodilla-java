@@ -5,7 +5,7 @@ public class OrderProcessorGlutenFreeShop implements OrderProcessor {
     Vendor vendor;
 
     public OrderProcessorGlutenFreeShop(Vendor vendor) {
-        this.vendor = vendor;
+        this.vendor = new Vendor("Gluten Free Shop","Butcher Str. 138");
     }
 
     public Vendor getVendor() {
@@ -14,7 +14,6 @@ public class OrderProcessorGlutenFreeShop implements OrderProcessor {
 
     public OrderDto process(Order order) {
         if (!order.equals(null)) {
-            System.out.println("Not Pretty");
             return new OrderDto(order.getVendor(), order.getProduct(), true);
         } else {
             System.out.println("Your cart is empty");
@@ -26,5 +25,12 @@ public class OrderProcessorGlutenFreeShop implements OrderProcessor {
         if (orderDto.isOrdered) {
             System.out.println("Your gluten-free treat consists of " + orderDto.getProduct());
         }
+    }
+
+    @Override
+    public String toString() {
+        return "OrderProcessorGlutenFreeShop{" +
+                "vendor=" + vendor.getName() +
+                '}';
     }
 }

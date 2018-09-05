@@ -22,14 +22,13 @@ public class Application {
         orderProcessorList.add(orderProcessorGlutenFreeShop);
         orderProcessorList.add(orderProcessorHealthyShop);
 
-        OrderProcessor orderProcessor = new OrderProcessorOperator(orderProcessorList);
+        OrderProcessor orderProcessorOperator = new OrderProcessorOperator(orderProcessorList);
 
-        System.out.println(order.getVendor().getName());
+        System.out.println("Thank you for shopping with Food2Door at " + order.getVendor().getName());
 
         try {
-            orderProcessor.process(order);
-            orderProcessor.confirm(orderProcessor.process(order));
-            //orderProcessor.confirm(orderProcessor.process(order));
+            OrderDto orderDto = orderProcessorOperator.process(order);
+            orderProcessorOperator.confirm(orderDto);
         } catch (Exception e) {
             System.out.println("Oh no! Error: " + e);
         }

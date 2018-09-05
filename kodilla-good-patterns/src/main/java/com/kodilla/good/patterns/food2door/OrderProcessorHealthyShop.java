@@ -5,7 +5,7 @@ public class OrderProcessorHealthyShop implements OrderProcessor {
     Vendor vendor;
 
     public OrderProcessorHealthyShop(Vendor vendor) {
-        this.vendor = vendor;
+        this.vendor = new Vendor("Healthy Shop","Kale Str. 666");
     }
 
     public Vendor getVendor() {
@@ -14,7 +14,6 @@ public class OrderProcessorHealthyShop implements OrderProcessor {
 
     public OrderDto process(Order order) {
         boolean isOrdered = !order.equals(null);
-        System.out.println("Lovely");
         if (isOrdered) {
             return new OrderDto(order.getVendor(), order.getProduct(), true);
         } else {
@@ -29,5 +28,12 @@ public class OrderProcessorHealthyShop implements OrderProcessor {
         } else {
             System.out.println("Please make your order");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "OrderProcessorHealthyShop{" +
+                "vendor=" + vendor.getName() +
+                '}';
     }
 }

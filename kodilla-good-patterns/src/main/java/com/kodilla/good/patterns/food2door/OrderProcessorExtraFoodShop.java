@@ -5,7 +5,7 @@ public class OrderProcessorExtraFoodShop implements OrderProcessor {
     Vendor vendor;
 
     public OrderProcessorExtraFoodShop(Vendor vendor) {
-        this.vendor = vendor;
+        this.vendor = new Vendor("Extra Food Shop","Sesame Str. 18");
     }
 
     public Vendor getVendor() {
@@ -26,4 +26,10 @@ public class OrderProcessorExtraFoodShop implements OrderProcessor {
         System.out.println(orderDto);
     }
 
+    @Override
+    public String toString() {
+        return "OrderProcessorExtraFoodShop{" +
+                "vendor=" + vendor.getName() +
+                '}';
+    }
 }
