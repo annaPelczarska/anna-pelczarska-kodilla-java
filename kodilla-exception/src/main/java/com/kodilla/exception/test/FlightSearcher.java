@@ -6,45 +6,37 @@ import java.util.stream.Collectors;
 
 public class FlightSearcher {
 
-    Flight flight;
     FlightMap flightMap;
 
-    public FlightSearcher(Flight flight, FlightMap flightMap) {
-        this.flight = flight;
+    public FlightSearcher(FlightMap flightMap) {
         this.flightMap = flightMap;
     }
+    int i = 0;
 
+    public boolean isFlightPossible(Flight flight) throws RouteNotFoundException {
+        i++;
+        System.out.println(i);
+        System.out.println("departure: "+flight.getDepartureAirport()+" arrival: "+flight.getArrivalAirport());
 
-    public String findFlight(Flight flight, FlightMap flightMap) throws RouteNotFoundException {
+        List<String> arrivalAirportList = flightMap.getFlightMap().get(flight.getDepartureAirport());
+        System.out.println(flight.getDepartureAirport());
+        System.out.println(arrivalAirportList);
 
-
-        Set<String> departureAirportList = flightMap.getFlightMap().entrySet().stream()
-                .map(e -> e.getKey())
-                .collect(Collectors.toSet());
-
-        if (!departureAirportList.contains(flight.getDepartureAirport())) {
-            throw new RouteNotFoundException("The airport of departure is not on the schedule");
+        if(arrivalAirportList == null){
+          throw new RouteNotFoundException("You cannot get anywhere from this airport" +flight.getDepartureAirport());
         }
 
-        List<String> directDestinationsList = flightMap.getFlightMap().get(flight.getDepartureAirport());
-        boolean directFlightIsPossible = directDestinationsList.contains(flight.getArrivalAirport());
-
-        List<String> departureAirportsWithConnectionToArrivalAirportList = flightMap.getFlightMap().entrySet().stream()
-                .filter(e -> e.getValue().contains(flight.getArrivalAirport()))
-                .map(e -> e.getKey())
-                .collect(Collectors.toList());
-
-        List<String> changeAirportsList = new ArrayList<>(directDestinationsList);
-        directDestinationsList.retainAll(departureAirportsWithConnectionToArrivalAirportList);
-
-        if (directFlightIsPossible) {
-            return "You can book direct flight from " + flight.getDepartureAirport() + " to " + flight.getArrivalAirport();
+        if (arrivalAirportList.contains(flight.getArrivalAirport())) {
+            System.out.println("direct flight possible.");
+            return true;
         }
-        else if (!changeAirportsList.equals(null)) {
-            return "There's no direct connection. You can book flight from " + flight.getDepartureAirport() + " to " + flight.getArrivalAirport() + " through " + changeAirportsList;
-        } else {
-            return "Flight to " + flight.getArrivalAirport() + " is not available";
+
+        for(String aAirport : arrivalAirportList){
+            if(isFlightPossible( new Flight(aAirport,flight.arrivalAirport))){
+                return true;
+            }
         }
+        throw new RouteNotFoundException("Journey from "+flight.getDepartureAirport()+" to "+flight.arrivalAirport+" is not scheduled.");
     }
 
 }

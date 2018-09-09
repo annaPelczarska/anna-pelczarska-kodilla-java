@@ -4,13 +4,16 @@ public class Application {
 
     public static void main(String args[]) {
 
+
+
         FlightMap flightMap = new FlightMap();
         Flight flight1 = new Flight("Wakanda", "Gotham");
-        FlightSearcher flightSearcher = new FlightSearcher(flight1, flightMap);
+        FlightSearcher flightSearcher = new FlightSearcher(flightMap);
         try {
 
-            flightSearcher.findFlight(flight1, flightMap);
-            System.out.println(flightSearcher.findFlight(flight1, flightMap));
+            flightSearcher.isFlightPossible(flight1);
+            String flightPossibility = (flightSearcher.isFlightPossible(flight1)) ? "available" : "not on the schedule";
+            System.out.println("Flight you're searching for is: "+ flightPossibility);
 
         } catch (RouteNotFoundException e) {
             System.out.println("Flight not scheduled " + e);

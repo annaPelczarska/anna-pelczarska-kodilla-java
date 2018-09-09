@@ -26,9 +26,9 @@ public class OrderDto {
 
     @Override
     public String toString() {
-        return "Thank you for your order{" +
-                "at " + vendor +
-                ". You ordered " + product +
+        return "Your order {" +
+                "from " + vendor +
+                " is completed. Summary: " + product +
                 '}';
     }
 }

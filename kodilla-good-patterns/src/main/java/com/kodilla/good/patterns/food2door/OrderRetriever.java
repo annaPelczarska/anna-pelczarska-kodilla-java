@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class OrderRetriever {
 
-    public Order retrieve(){
+    public Order retrieve(){ 
 
         User user = new User("John", "Roe");
         Vendor vendor = new Vendor("Extra Food Shop","Sesame Str. 18");
