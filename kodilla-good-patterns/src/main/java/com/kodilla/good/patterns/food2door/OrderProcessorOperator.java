@@ -4,12 +4,9 @@ import java.util.*;
 
 public class OrderProcessorOperator implements OrderProcessor {
 
-
     Map<Vendor, OrderProcessor> orderProcessorMap = new HashMap<>();
-    List<OrderProcessor> orderProcessorList = new LinkedList<>();
     OrderRetriever retriever = new OrderRetriever();
     Order order = retriever.retrieve();
-
 
     public Vendor getVendor() {
         return order.getVendor();
@@ -22,19 +19,25 @@ public class OrderProcessorOperator implements OrderProcessor {
         }
     }
 
-    @Override
-    public OrderDto process(Order order) throws EmptyOrderException {
+    public Map<Vendor, OrderProcessor> getOrderProcessorMap() {
+        return orderProcessorMap;
+    }
 
-        if (order != null) {
+    @Override
+    public boolean process(Order order) throws EmptyOrderException {
+
+        if (order != null && orderProcessorMap.get(order.getVendor()) != null) {
             orderProcessorMap.get(order.getVendor()).process(order);
-            return new OrderDto(order.getVendor(), order.getProduct(), true);
+            return true;
         } else {
-            System.out.println("Your cart is empty");
-            return new OrderDto(order.getVendor(), order.getProduct(), false);
+            throw new EmptyOrderException("Please re-submit your order");
         }
     }
-    public void confirm(OrderDto orderDto) {
-        orderProcessorMap.get(order.getVendor()).confirm(orderDto);
+
+    public void confirm(Order order) {
+        orderProcessorMap.get(order.getVendor()).confirm(order);
+
+
     }
 }
 

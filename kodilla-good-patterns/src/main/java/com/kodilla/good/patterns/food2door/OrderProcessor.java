@@ -2,9 +2,9 @@ package com.kodilla.good.patterns.food2door;
 
 public interface OrderProcessor {
 
-    OrderDto process(Order order) throws EmptyOrderException;
+    boolean process(Order order) throws EmptyOrderException;
 
-    void confirm(OrderDto orderDto);
+    void confirm(Order order);
 
-    public Vendor getVendor();
+    Vendor getVendor();
 }

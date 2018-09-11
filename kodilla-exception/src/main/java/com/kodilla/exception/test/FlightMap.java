@@ -8,21 +8,17 @@ import java.util.Map;
 public class FlightMap {
 
 
-
-
     public Map<String, List<String>> getFlightMap() {
-
 
         List<String> flightsFromWakanda = new ArrayList<>();
         flightsFromWakanda.add("New York");
-        //flightsFromWakanda.add("Geneva");
         flightsFromWakanda.add("Edinburgh");
 
         List<String> flightsFromNewYork = new ArrayList<>();
         flightsFromNewYork.add("Geneva");
         flightsFromNewYork.add("Edinburgh");
         flightsFromNewYork.add("Wakanda");
-        flightsFromNewYork.add("Gotham");
+       // flightsFromNewYork.add("Gotham");
 
         List<String> flightsFromSokovia = new ArrayList<>();
         flightsFromSokovia.add("Edinburgh");
@@ -34,8 +30,8 @@ public class FlightMap {
         flightsFromGotham.add("New York");
 
         List<String> flightsFromGeneva = new ArrayList<>();
-        flightsFromNewYork.add("Wakanda");
-        flightsFromNewYork.add("Gotham");
+        flightsFromGeneva.add("Wakanda");
+        flightsFromGeneva.add("Gotham");
 
         List<String> flightsFromEdinburgh = new ArrayList<>();
         flightsFromEdinburgh.add("Wakanda");

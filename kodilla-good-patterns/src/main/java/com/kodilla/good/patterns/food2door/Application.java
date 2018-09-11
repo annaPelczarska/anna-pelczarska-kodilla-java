@@ -5,9 +5,7 @@ import java.util.List;
 
 public class Application {
 
-
     public static void main(String[] args) {
-
 
         OrderRetriever orderRetriever = new OrderRetriever();
         Order order = orderRetriever.retrieve();
@@ -27,8 +25,9 @@ public class Application {
         System.out.println("Thank you for shopping with Food2Door at " + order.getVendor().getName());
 
         try {
-            OrderDto orderDto = orderProcessorOperator.process(order);
-            orderProcessorOperator.confirm(orderDto);
+            orderProcessorOperator.process(order);
+            orderProcessorOperator.confirm(order);
+
         } catch (Exception e) {
             System.out.println("Oh no! Error: " + e);
         }

@@ -3,6 +3,7 @@ package com.kodilla.good.patterns.food2door;
 public class OrderProcessorGlutenFreeShop implements OrderProcessor {
 
     Vendor vendor;
+    boolean isOrderProcessed;
 
     public OrderProcessorGlutenFreeShop(Vendor vendor) {
         this.vendor = new Vendor("Gluten Free Shop","Butcher Str. 138");
@@ -12,18 +13,18 @@ public class OrderProcessorGlutenFreeShop implements OrderProcessor {
         return vendor;
     }
 
-    public OrderDto process(Order order) {
+    public boolean process(Order order) {
         if (order != null) {
-            return new OrderDto(order.getVendor(), order.getProduct(), true);
+            return isOrderProcessed = true ;
         } else {
             System.out.println("Your cart is empty");
-            return new OrderDto(order.getVendor(), order.getProduct(), false);
+            return isOrderProcessed = false;
         }
     }
 
-    public void confirm(OrderDto orderDto) {
-        if (orderDto.isOrdered) {
-            System.out.println("Your gluten-free treat consists of " + orderDto.getProduct());
+    public void confirm(Order order) {
+        if (isOrderProcessed) {
+            System.out.println("Your gluten-free treat consists of " + order.getProduct());
         }
     }
 
