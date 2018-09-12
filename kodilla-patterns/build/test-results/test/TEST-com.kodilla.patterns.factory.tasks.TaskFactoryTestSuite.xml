@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.patterns.factory.tasks.TaskFactoryTestSuite" tests="3" skipped="0" failures="0" errors="0" timestamp="2018-09-12T18:56:22" hostname="DESKTOP-OBVS8UK" time="0.013">
+  <properties/>
+  <testcase name="testFactoryDrivingTask" classname="com.kodilla.patterns.factory.tasks.TaskFactoryTestSuite" time="0.006"/>
+  <testcase name="testFactoryPaintingTask" classname="com.kodilla.patterns.factory.tasks.TaskFactoryTestSuite" time="0.002"/>
+  <testcase name="testFactoryShoppingTask" classname="com.kodilla.patterns.factory.tasks.TaskFactoryTestSuite" time="0.002"/>
+  <system-out><![CDATA[Driving to over the rainbow by LSD
+Painting fence turquoise
+Buying rotten tomatoes in the following quantity: 12.0
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

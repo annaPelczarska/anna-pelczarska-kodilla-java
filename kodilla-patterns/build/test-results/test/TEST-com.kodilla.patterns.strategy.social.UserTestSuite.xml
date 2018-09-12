@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.patterns.strategy.social.UserTestSuite" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-09-12T18:56:22" hostname="DESKTOP-OBVS8UK" time="0.015">
+  <properties/>
+  <testcase name="testDefaultSharingStrategies" classname="com.kodilla.patterns.strategy.social.UserTestSuite" time="0.008"/>
+  <testcase name="testIndividualSharingStrategy" classname="com.kodilla.patterns.strategy.social.UserTestSuite" time="0.005"/>
+  <system-out><![CDATA[When Gary posts he's sharing on Facebook
+When Frank posts he's sharing on Twitter
+When Zoe posts she's sharing on Snapchat
+When Jess posted last year she used to be sharing on Snapchat
+Now when Jess posts she's sharing on Twitter
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
