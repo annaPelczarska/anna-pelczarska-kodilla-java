@@ -2,6 +2,7 @@ package com.kodilla.patterns.prototype.library;
 
 import org.junit.Test;
 import org.junit.Assert;
+
 import java.time.LocalDate;
 
 public class LibraryTestSuite {

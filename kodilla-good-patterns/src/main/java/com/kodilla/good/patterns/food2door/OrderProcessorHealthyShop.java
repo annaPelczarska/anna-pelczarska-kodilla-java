@@ -2,16 +2,11 @@ package com.kodilla.good.patterns.food2door;
 
 public class OrderProcessorHealthyShop implements OrderProcessor {
 
-    Vendor vendor;
+    Vendor healthyShop = new Vendor("Healthy Shop", "Kale Str. 666");
     boolean isOrderProcessed;
 
-
-    public OrderProcessorHealthyShop(Vendor vendor) {
-        this.vendor = new Vendor("Healthy Shop","Kale Str. 666");
-    }
-
     public Vendor getVendor() {
-        return vendor;
+        return healthyShop;
     }
 
     public boolean process(Order order) {
@@ -34,7 +29,7 @@ public class OrderProcessorHealthyShop implements OrderProcessor {
     @Override
     public String toString() {
         return "OrderProcessorHealthyShop{" +
-                "vendor=" + vendor.getName() +
+                "vendor=" + healthyShop.getName() +
                 '}';
     }
 }

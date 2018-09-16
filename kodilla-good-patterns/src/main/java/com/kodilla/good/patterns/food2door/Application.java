@@ -12,9 +12,9 @@ public class Application {
 
         List<OrderProcessor> orderProcessorList = new LinkedList<>();
 
-        OrderProcessor orderProcessorExtraFoodShop = new OrderProcessorExtraFoodShop(order.getVendor());
-        OrderProcessor orderProcessorGlutenFreeShop = new OrderProcessorGlutenFreeShop(order.getVendor());
-        OrderProcessor orderProcessorHealthyShop = new OrderProcessorHealthyShop(order.getVendor());
+        OrderProcessor orderProcessorExtraFoodShop = new OrderProcessorExtraFoodShop();
+        OrderProcessor orderProcessorGlutenFreeShop = new OrderProcessorGlutenFreeShop();
+        OrderProcessor orderProcessorHealthyShop = new OrderProcessorHealthyShop();
 
         orderProcessorList.add(orderProcessorExtraFoodShop);
         orderProcessorList.add(orderProcessorGlutenFreeShop);
