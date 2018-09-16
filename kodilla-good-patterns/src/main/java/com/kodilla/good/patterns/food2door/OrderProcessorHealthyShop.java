@@ -2,7 +2,7 @@ package com.kodilla.good.patterns.food2door;
 
 public class OrderProcessorHealthyShop implements OrderProcessor {
 
-    Vendor healthyShop = new Vendor("Healthy Shop", "Kale Str. 666");
+    private  final Vendor healthyShop = new Vendor("Healthy Shop", "Kale Str. 666");
     boolean isOrderProcessed;
 
     public Vendor getVendor() {

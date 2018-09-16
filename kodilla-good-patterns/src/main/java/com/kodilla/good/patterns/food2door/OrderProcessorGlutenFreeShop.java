@@ -2,7 +2,7 @@ package com.kodilla.good.patterns.food2door;
 
 public class OrderProcessorGlutenFreeShop implements OrderProcessor {
 
-    Vendor glutenFreeShop = new Vendor("Gluten Free Shop", "Butcher Str. 138");
+    private final Vendor glutenFreeShop = new Vendor("Gluten Free Shop", "Butcher Str. 138");
     boolean isOrderProcessed;
 
 
