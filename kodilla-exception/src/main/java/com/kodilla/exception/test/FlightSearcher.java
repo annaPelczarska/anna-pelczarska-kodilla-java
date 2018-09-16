@@ -12,9 +12,10 @@ public class FlightSearcher {
         this.flightMap = flightMap;
     }
 
-int i = 0;
+    int i = 0;
+
     public boolean isFlightPossible(Flight flight) throws RouteNotFoundException {
-i++;
+        i++;
         //System.out.println(i+ "\n" + "departure: "+flight.getDepartureAirport()+", arrival: "+flight.getArrivalAirport());
 
         List<String> arrivalAirportList = flightMap.getFlightMap().get(flight.getDepartureAirport());

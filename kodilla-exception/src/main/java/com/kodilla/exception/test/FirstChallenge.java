@@ -2,16 +2,17 @@ package com.kodilla.exception.test;
 
 public class FirstChallenge {
 
-        public double divide ( double a, double b) throws ArithmeticException {
-            if (b == 0) {
-                throw new ArithmeticException();
-            }
-            return a / b;
+    public double divide(double a, double b) throws ArithmeticException {
+        if (b == 0) {
+            throw new ArithmeticException();
         }
+        return a / b;
+    }
 
 
     /**
      * This main can throw an ArithmeticException!!!
+     *
      * @param args
      */
     public static void main(String[] args) {
@@ -23,8 +24,8 @@ public class FirstChallenge {
             System.out.println(result);
 
         } catch (ArithmeticException e) {
-            System.out.println("Division by 0! "+e);
-        }finally {
+            System.out.println("Division by 0! " + e);
+        } finally {
             System.out.println("What a nice day for division!");
         }
 

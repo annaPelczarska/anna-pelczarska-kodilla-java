@@ -2,7 +2,7 @@ package com.kodilla.patterns.strategy.social;
 
 public class User {
 
-    final private String name;
+    private final String name;
 
     protected SocialPublisher socialPublisher;
 
@@ -17,7 +17,8 @@ public class User {
     public void setSocialPublisher(SocialPublisher socialPublisher) {
         this.socialPublisher = socialPublisher;
     }
-    public String sharePost(){
+
+    public String sharePost() {
         return socialPublisher.share();
     }
 

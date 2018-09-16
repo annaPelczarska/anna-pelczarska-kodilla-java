@@ -18,7 +18,7 @@ public class FlightMap {
         flightsFromNewYork.add("Geneva");
         flightsFromNewYork.add("Edinburgh");
         flightsFromNewYork.add("Wakanda");
-       // flightsFromNewYork.add("Gotham");
+        // flightsFromNewYork.add("Gotham");
 
         List<String> flightsFromSokovia = new ArrayList<>();
         flightsFromSokovia.add("Edinburgh");

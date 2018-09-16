@@ -5,11 +5,11 @@ public class ExceptionHandling {
     public static void main(String args[]) {
 
         SecondChallenge challenge = new SecondChallenge();
-            try {
-                challenge.probablyIWillThrowException(4.0, 1.6);
-            } catch (Exception e) {
-                System.out.println("Oh no! Error: " + e);
-            }
+        try {
+            challenge.probablyIWillThrowException(4.0, 1.6);
+        } catch (Exception e) {
+            System.out.println("Oh no! Error: " + e);
+        }
 
     }
 }
