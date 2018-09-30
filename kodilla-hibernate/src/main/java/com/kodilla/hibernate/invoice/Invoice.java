@@ -7,8 +7,22 @@ import java.util.List;
 @Entity
 @Table(name = "INVOICES")
 public final class Invoice {
+
+    @Id
+    @GeneratedValue
+    @NotNull
+    @Column(name = "ID", unique = true)
     private int id;
+
+    @Column(name = "INVOICE_NUMBER")
     private String number;
+
+    @OneToMany(
+            targetEntity = Item.class,
+            mappedBy = "invoice",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
     private List<Item> items;
 
     public Invoice() {
@@ -19,38 +33,7 @@ public final class Invoice {
         this.items = items;
     }
 
-    @Id
-    @GeneratedValue
-    @NotNull
-    @Column(name = "ID", unique = true)
     public int getId() {
         return id;
-    }
-
-    private void setId(int id) {
-        this.id = id;
-    }
-
-    @Column(name = "INVOICE_NUMBER")
-    public String getNumber() {
-        return number;
-    }
-
-    private void setNumber(String number) {
-        this.number = number;
-    }
-
-    @OneToMany(
-            targetEntity = Item.class,
-            mappedBy = "invoice",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
-    )
-    public List<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(List<Item> items) {
-        this.items = items;
     }
 }
