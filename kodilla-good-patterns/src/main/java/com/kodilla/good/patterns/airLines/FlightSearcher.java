@@ -28,7 +28,7 @@ public class FlightSearcher {
 
     public boolean isFlightFromToPossible(Flight flight){
 
-        List<String> arrivalAirportList = flightMap.getFlightMap().get(flight.getArrivalAirport());
+        List<String> arrivalAirportList = flightMap.getFlightMap().get(flight.getDepartureAirport());
 
         if(arrivalAirportList.contains(flight.getArrivalAirport())){
             return true;

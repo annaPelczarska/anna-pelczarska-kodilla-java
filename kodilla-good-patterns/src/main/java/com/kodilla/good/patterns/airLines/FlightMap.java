@@ -7,6 +7,7 @@ import java.util.Map;
 
 public class FlightMap {
 
+
     public Map<String, List<String>> getFlightMap() {
 
         List<String> flightsFromWakanda = new ArrayList<>();
@@ -46,5 +47,10 @@ public class FlightMap {
         flightMap.put("Edinburgh", flightsFromEdinburgh);
 
         return flightMap;
+    }
+
+    @Override
+    public String toString() {
+        return "FlightMap{}";
     }
 }
