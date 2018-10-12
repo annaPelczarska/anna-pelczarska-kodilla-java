@@ -1,10 +1,14 @@
 package com.kodilla.patterns.factory.tasks;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public final class PaintingTask implements Task {
 
     private String taskName;
     private String color;
     private String whatToPaint;
+    private List<String> paintingTaskNamesList = new ArrayList<>();
 
     public PaintingTask(String taskName, String color, String whatToPaint) {
         this.taskName = taskName;
@@ -14,7 +18,8 @@ public final class PaintingTask implements Task {
 
     @Override
     public void executeTask() {
-        System.out.println("Painting "+whatToPaint+" "+color);
+        System.out.println("Painting " + whatToPaint + " " + color);
+        paintingTaskNamesList.add(taskName);
     }
 
     @Override
@@ -24,6 +29,8 @@ public final class PaintingTask implements Task {
 
     @Override
     public boolean isTaskExecuted() {
-        return true;
+        if (paintingTaskNamesList.contains(taskName)) {
+            return true;
+        } else return false;
     }
 }

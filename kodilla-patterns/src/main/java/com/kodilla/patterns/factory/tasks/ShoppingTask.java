@@ -1,10 +1,14 @@
 package com.kodilla.patterns.factory.tasks;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public final class ShoppingTask implements Task {
 
-    String taskName;
-    String whatToBuy;
-    double quantity;
+    private String taskName;
+    private String whatToBuy;
+    private double quantity;
+    private List<String> shoppingTaskNamesList = new ArrayList<>();
 
     public ShoppingTask(String taskName, String whatToBuy, double quantity) {
         this.taskName = taskName;
@@ -14,7 +18,8 @@ public final class ShoppingTask implements Task {
 
     @Override
     public void executeTask() {
-        System.out.println("Buying "+whatToBuy+" in the following quantity: "+quantity);
+        System.out.println("Buying " + whatToBuy + " in the following quantity: " + quantity);
+        shoppingTaskNamesList.add(taskName);
     }
 
     @Override
@@ -24,6 +29,10 @@ public final class ShoppingTask implements Task {
 
     @Override
     public boolean isTaskExecuted() {
-     return true;
+        if (shoppingTaskNamesList.contains(taskName)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

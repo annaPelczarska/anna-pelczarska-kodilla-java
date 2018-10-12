@@ -12,12 +12,12 @@ public class FlightSearcher {
         this.flightMap = flightMap;
     }
 
-    public List<String> whereCanIGoFrom(String departureAirport){
+    public List<String> whereCanIGoFrom(String departureAirport) {
 
         return flightMap.getFlightMap().get(departureAirport);
     }
 
-    public List<String> whereFromCanIGoTo(String arrivalAirport){
+    public List<String> whereFromCanIGoTo(String arrivalAirport) {
 
         List<String> listOfAirportsWithConnectionTo = flightMap.getFlightMap().entrySet().stream()
                 .filter(e -> e.getValue().contains(arrivalAirport))
@@ -26,11 +26,11 @@ public class FlightSearcher {
         return listOfAirportsWithConnectionTo;
     }
 
-    public boolean isFlightFromToPossible(Flight flight){
+    public boolean isFlightFromToPossible(Flight flight) {
 
         List<String> arrivalAirportList = flightMap.getFlightMap().get(flight.getDepartureAirport());
 
-        if(arrivalAirportList.contains(flight.getArrivalAirport())){
+        if (arrivalAirportList.contains(flight.getArrivalAirport())) {
             return true;
         }
         for (String aAirport : arrivalAirportList) {

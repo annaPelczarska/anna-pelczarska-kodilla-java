@@ -8,9 +8,9 @@ public final class TaskFactory {
     public final Task makeTask(final String taskClass) {
         switch (taskClass) {
             case SHOPPING:
-                return new ShoppingTask("Grocery shopping","rotten tomatoes", 12);
+                return new ShoppingTask("Grocery shopping", "rotten tomatoes", 12);
             case PAINTING:
-                return new PaintingTask("Outside painting", "turquoise","fence");
+                return new PaintingTask("Outside painting", "turquoise", "fence");
             case DRIVING:
                 return new DrivingTask("Trippy trip", "over the rainbow", "LSD");
             default:

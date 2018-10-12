@@ -11,14 +11,13 @@ public class FlightValidator {
     public boolean validateFlight(Flight flight) {
 
         Set<String> allArrivalAirportsSet = flightMap.getFlightMap().entrySet().stream()
-                .flatMap(e->e.getValue().stream())
+                .flatMap(e -> e.getValue().stream())
                 .collect(Collectors.toSet());
 
         if (flight.arrivalAirport == null || flight.departureAirport == null) {
             return false;
         } else if (flightMap.getFlightMap().get(flight.getDepartureAirport()).isEmpty() ||
-                (!allArrivalAirportsSet.contains(flight.getArrivalAirport())))
-        {
+                (!allArrivalAirportsSet.contains(flight.getArrivalAirport()))) {
             return false;
         } else {
             return true;

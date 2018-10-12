@@ -1,10 +1,14 @@
 package com.kodilla.patterns.factory.tasks;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public final class DrivingTask implements Task {
 
-    String taskName;
-    String where;
-    String using;
+    private String taskName;
+    private String where;
+    private String using;
+    private List<String> drivingTaskNamesList = new ArrayList<>();
 
     public DrivingTask(String taskName, String where, String using) {
         this.taskName = taskName;
@@ -14,7 +18,8 @@ public final class DrivingTask implements Task {
 
     @Override
     public void executeTask() {
-        System.out.println("Driving to "+where+" by "+using);
+        System.out.println("Driving to " + where + " by " + using);
+        drivingTaskNamesList.add(taskName);
     }
 
     @Override
@@ -24,6 +29,10 @@ public final class DrivingTask implements Task {
 
     @Override
     public boolean isTaskExecuted() {
-        return true;
+        if (drivingTaskNamesList.contains(taskName)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

@@ -6,7 +6,7 @@ import org.junit.Test;
 public class TaskFactoryTestSuite {
 
     @Test
-    public void testFactoryShoppingTask(){
+    public void testFactoryShoppingTask() {
         //Given
         TaskFactory factory = new TaskFactory();
         //When
@@ -16,6 +16,7 @@ public class TaskFactoryTestSuite {
         Assert.assertEquals(true, shoppingTask.isTaskExecuted());
         Assert.assertEquals("Grocery shopping", shoppingTask.getTaskName());
     }
+
     @Test
     public void testFactoryPaintingTask() {
         //Given
