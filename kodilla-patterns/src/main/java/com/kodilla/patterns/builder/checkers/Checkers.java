@@ -77,6 +77,6 @@ public class Checkers {
                 throw new IllegalStateException("There are no figures of both colors on the board!");
             }
             return new Checkers(board, playerOne, playerTwo);
-        };
+        }
     }
 }
